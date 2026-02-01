@@ -1,0 +1,39 @@
+{
+  "id": 11660,
+  "title": "Generate Consensus Answers with Multiple AI Models & Peer Review System",
+  "slug": "generate-consensus-answers-with-multiple-ai-models-peer-review-system-11660",
+  "description": "AI COUNCIL: MULTI-MODEL CONSENSUS WITH PEER REVIEWInspired by Andrej Karpathy's LLM Council[https://github.com/karpathy/llm-council], but rebuilt in n8n.This workflow creates a \"council\" of AI models that independently answer yourquestion, then peer-review each other's responses before a final arbitersynthesizes the best answer.--------------------------------------------------------------------------------WHO IS THIS FOR? * If you want to prepare for an upcoming meeting with different people and prep for their different views * find any \"blind spots\" in your view on a certain subject * Researchers wanting more robust AI-generated answers * Developers exploring multi-model architectures * Anyone seeking higher-quality responses through AI consensus, potentially with faster/cheaper models. * Teams evaluating different LLM capabilities side-by-side--------------------------------------------------------------------------------HOW IT WORKS 1. Ask a Question — Submit your query via the Chat Trigger 2. Individual Answers — Four different models (Gemini, Llama, Gemma, Mistral) independently generate responses 3. Peer Review — Each model reviews ALL answers, identifying pros, cons, and overall assessment 4. Final Synthesis — DeepSeek R1 analyzes all peer reviews and produces a refined, consensus-based final answer--------------------------------------------------------------------------------SETUP INSTRUCTIONSPREREQUISITES * Access to an LLM (e.g. OpenRouter [https://openrouter.ai/] account with API credits)STEPS 1. Create OpenRouter credentials in n8n: * Go to Settings → Credentials → Add Credential * Select \"OpenRouter\" and paste your API key 2. Connect all model nodes to your OpenRouter credential. In this example I used Gemini, Llama, Gemma, Mistral and Deepseek, but you can use whatever you want. You can also use the same models, but change their parameters. Play around to find out what suits you best. 3. Activate the workflow and open the Chat interface to test--------------------------------------------------------------------------------CUSTOMIZATION IDEAS * You can add as many answer and review models as you want. Do note that each AI node is executed in series, so each will add to the total duration. * Swap models via OpenRouter's model selector (e.g., use Claude, GPT-4, etc.) * Adjust the peer review prompt to represent a certain persona or with domain-specific evaluation criteria * Add memory nodes for multi-turn conversations * Connect to Slack/Discord instead of the Chat Trigger",
+  "metadescription": "Bring together top AI models for smarter answers! AI Council provides multi-model consensus, peer review, and final synthesis for robust, bias-free results. Learn more.",
+  "summary": "Bring multiple AI perspectives together for smarter decisions—submit any question and four models (Gemini, Llama, Gemma, Mistral) generate independent answers.  \nEach model peer-reviews every response, highlighting strengths and weaknesses to minimize group bias and reveal blind spots.  \nA final “arbiter” model synthesizes all peer reviews into one robust, consensus-driven answer.  \nCustomize with more models, persona-based reviews, or domain-focused criteria—perfect for researchers, teams comparing LLMs, or anyone seeking high-quality AI output.  \nEasy setup with OpenRouter and flexible integrations, including Slack or Discord.",
+  "date": "10 Dec 2025",
+  "createdAtRaw": "2025-12-10T14:51:09.954+00:00",
+  "categories": [
+    "Engineering",
+    "AI Summarization"
+  ],
+  "nodeTypes": [
+    "n8n-nodes-base.merge",
+    "n8n-nodes-base.aggregate",
+    "n8n-nodes-base.stickyNote",
+    "@n8n/n8n-nodes-langchain.agent",
+    "@n8n/n8n-nodes-langchain.chainLlm",
+    "@n8n/n8n-nodes-langchain.chatTrigger",
+    "@n8n/n8n-nodes-langchain.lmChatOpenRouter"
+  ],
+  "author": {
+    "name": "Guido X Jansen",
+    "username": "gxjansen",
+    "avatar": "https://gravatar.com/avatar/a750e7873cd5163766855bc84f7802a1cf2db764c245ab7260941b418126aa91?r=pg&d=retro&size=200",
+    "verified": false
+  },
+  "popularity": 28,
+  "visitors": 82,
+  "inserters": 35,
+  "templateUrl": "https://n8n.io/workflows/11660",
+  "readme": "",
+  "thumbnail": "https://supabase.amastuces.com/storage/v1/object/public/worklowscreenshot/11660-generate-consensus-answers-with-multiple-ai-models---peer-review-system.webp",
+  "complexityLevel": "advanced",
+  "templateData": null,
+  "price": 0,
+  "referalUrl": null
+}
